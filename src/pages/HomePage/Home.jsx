@@ -1,40 +1,44 @@
 import React from "react"
 import "./style.css"
-import Button from "../../components/Button"
+import Method from "../../components/Methods"
 
 import { useNavigate } from "react-router-dom"
 
 const HomePage = () => {
   const navigate = useNavigate()
 
-  const handleClick = () => {
-    navigate("/upload/{method}")
+  const handleClick = (method) => {
+    navigate("/upload", { state: { method } })
   }
 
   return (
     <>
       <h1>Bem-vindo ao PDF Express</h1>
       <div id="buttons">
-        <Button 
-          onClick={handleClick}
+        <Method
+          method={"docx_to_pdf"}
+          onClick={() => handleClick("docx_to_pdf")}
           class="button"
           title={"Word para PDF"}
           description={"docx para pdf"}
         />
-        <Button 
-          onClick={handleClick}
+        <Method
+          method={"image_to_pdf"}
+          onClick={() => handleClick("image_to_pdf")}
           class="button"
           title={"Imagem para PDF"}
           description={"svg, png para pdf"}
         />
-        <Button
-          onClick={handleClick}
+        <Method
+          method={"xlsx_to_pdf"}
+          onClick={() => handleClick("xlsx_to_pdf")}
           class="button"
           title={"Excel para PDF"}
           description={"xlsx para pdf"}
         />
-        <Button
-          onClick={handleClick}
+        <Method
+          method={"txt_to_pdf"}
+          onClick={() => handleClick("txt_to_pdf")}
           class="button"
           title={"Texto para PDF"}
           description={"txt para pdf"}

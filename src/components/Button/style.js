@@ -1,10 +1,5 @@
 import styled from "styled-components"
 
-const styledButton = styled.button`
-  background-color: coral;
-  border-radius: 8px;
+const StyledButton = styled.button``
 
- 
-`
-
-export default styledButton
+export default StyledButton

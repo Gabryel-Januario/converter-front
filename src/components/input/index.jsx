@@ -1,12 +1,12 @@
 import React from "react"
-import styleInput from "./style"
+import StyleInput from "./style"
 
-function Input({ label }) {
+function Input({ label, ref }) {
   return (
-    <styleInput action="#" method="POST" enctype="multipart/form-data">
+    <StyleInput action="#" method="POST" enctype="multipart/form-data">
       <label htmlFor="file-upload">{label}</label>
-      <input type="file" id="file-upload" name="file-upload" />
-    </styleInput>
+      <input type="file" id="file-upload" name="file-upload" ref={ref} />
+    </StyleInput>
   )
 }
 

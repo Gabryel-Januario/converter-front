@@ -1,10 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
+const StyleInput = styled.form``
 
-const styleInput = styled.form`
-
-
-
-`
-
-export default styleInput
+export default StyleInput

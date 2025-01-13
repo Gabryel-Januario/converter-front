@@ -1,13 +1,10 @@
 import React from "react"
 import StyledButton from "./style"
 
-function Button({ title, description, onClick, method }) {
+function Button({ onClick, title }) {
   return (
-    <StyledButton onClick={onClick} >
-      <div>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
+    <StyledButton onClick={onClick} type="submit">
+      {title}
     </StyledButton>
   )
 }
