@@ -8,6 +8,8 @@ const DownloadPage = () => {
   const location = useLocation()
   const filename = location.state?.filename
 
+  const filenamePDF = filename.substring(0, filename.lastIndexOf(".")) + ".pdf"
+
   const handleDownload = async () => {
     if (!filename) {
       alert("Nome do arquivo para download não encontrado.")
@@ -15,12 +17,12 @@ const DownloadPage = () => {
     }
 
     console.log(
-      `Tentando baixar de: http://localhost:5000/api/download/${filename}`
+      `Tentando baixar de: http://localhost:5000/api/download/${filenamePDF}`
     )
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/download/my.pdf`,
+        `http://localhost:5000/api/download/${filenamePDF}`,
         {
           method: "GET",
         }
@@ -33,7 +35,7 @@ const DownloadPage = () => {
 
         const a = document.createElement("a")
         a.href = url
-        a.download = downloadUrl.split("/").pop()
+        a.download = filenamePDF
         document.body.appendChild(a)
         a.click()
 
