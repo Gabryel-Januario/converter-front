@@ -1,6 +1,7 @@
 import React from "react"
 import "./style.css"
 import Button from "../../components/Button"
+import Header from "../../components/Header"
 
 import { useLocation } from "react-router-dom"
 
@@ -15,10 +16,6 @@ const DownloadPage = () => {
       alert("Nome do arquivo para download não encontrado.")
       return
     }
-
-    console.log(
-      `Tentando baixar de: http://localhost:5000/api/download/${filenamePDF}`
-    )
 
     try {
       const response = await fetch(
@@ -52,7 +49,8 @@ const DownloadPage = () => {
 
   return (
     <>
-      <h1>DownloadPage</h1>
+      <Header />
+
       <Button title={"Faça o download do arquivo"} onClick={handleDownload} />
     </>
   )

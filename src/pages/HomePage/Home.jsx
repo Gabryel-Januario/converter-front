@@ -1,6 +1,8 @@
 import React from "react"
 import "./style.css"
 import Method from "../../components/Methods"
+import pdfImage from "../../resources/pdf.png"
+import Header from "../../components/Header"
 
 import { useNavigate } from "react-router-dom"
 
@@ -13,7 +15,11 @@ const HomePage = () => {
 
   return (
     <>
+      <Header />
       <h1>Bem-vindo ao PDF Express</h1>
+      <div className="image-container">
+        <img src={pdfImage} alt="imagem de um arquivo PDF" />
+      </div>
       <div id="buttons">
         <Method
           method={"docx_to_pdf"}

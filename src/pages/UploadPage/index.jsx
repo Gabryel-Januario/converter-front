@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import "./style.css"
 import Input from "../../components/input"
 import Button from "../../components/Button"
+import Header from "../../components/Header"
 
 import { useLocation, useNavigate } from "react-router-dom"
 
@@ -111,11 +112,14 @@ const UploadPage = () => {
 
   return (
     <>
+      <Header />
       <h1>Faça o upload do seu arquivo!</h1>
       <div id="input">
         <Input label={"Arquivo Word(docx)"} ref={fileInputRef} />
       </div>
-      <Button title={"Submit"} onClick={handleSubmit} />
+      <div className="centered">
+        <Button title={"Converter"} onClick={handleSubmit} />
+      </div>
     </>
   )
 }
