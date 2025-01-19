@@ -1,10 +1,10 @@
 import React from "react"
 import StyleInput from "./style"
 
-function Input({ label, ref }) {
+function Input({  ref, inputName }) {
   return (
     <StyleInput action="#" method="POST" enctype="multipart/form-data">
-      <label htmlFor="file-upload">{label}</label>
+      
       <div className="file-upload-container">
         <input
           type="file"
@@ -14,7 +14,7 @@ function Input({ label, ref }) {
           className="file-input"
         />
         <label htmlFor="file-upload" className="upload-button">
-          <i className="fa fa-upload"></i> Selecionar Arquivo
+          <i className="fa fa-upload">{inputName}</i>
         </label>
       </div>
     </StyleInput>

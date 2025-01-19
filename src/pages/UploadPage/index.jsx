@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import "./style.css"
 import Input from "../../components/input"
 import Button from "../../components/Button"
@@ -10,6 +10,9 @@ const UploadPage = () => {
   const location = useLocation()
   const method = location.state?.method
   const navigate = useNavigate()
+
+  const [label, setLabel] = useState("Método não encontrado")
+  const [filename, setFilename] = useState("")
 
   const fileInputRef = useRef(null)
 
@@ -110,12 +113,35 @@ const UploadPage = () => {
     }
   }
 
+  const handleFileChange = () => {
+    const file = fileInputRef.current?.files[0]
+    if (file) {
+      setFilename(file.name)
+    }
+  }
+
+  useEffect(() => {
+    if (method == "docx_to_pdf") {
+      setLabel("Selecione o arquivo Word")
+    } else if (method == "image_to_pdf") {
+      setLabel("Selecione uma Imagem")
+    } else if (method == "xlsx_to_pdf") {
+      setLabel("Selecione o arquivo Excel")
+    } else if (method == "txt_to_pdf") {
+      setLabel("Selecione o arquivo de texto")
+    } else if (filename) {
+      setLabel(filename)
+    } else {
+      setLabel("Método não encontrado")
+    }
+  }, [method])
+
   return (
     <>
       <Header />
-      <h1>Faça o upload do seu arquivo!</h1>
+      <h2>Faça o upload do seu arquivo!</h2>
       <div id="input">
-        <Input label={"Arquivo Word(docx)"} ref={fileInputRef} />
+        <Input ref={fileInputRef} inputName={label} />
       </div>
       <div className="centered">
         <Button title={"Converter"} onClick={handleSubmit} />

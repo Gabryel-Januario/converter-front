@@ -4,7 +4,7 @@ import React from "react"
 function Header() {
   return (
     <StyledHeader>
-      <h2>PDF Express</h2>
+      <h1>PDF Express</h1>
     </StyledHeader>
   )
 }

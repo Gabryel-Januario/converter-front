@@ -16,7 +16,7 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <h1>Bem-vindo ao PDF Express</h1>
+      <h2>Conversões de arquivos sem complicação no PDF Express</h2>
       <div className="image-container">
         <img src={pdfImage} alt="imagem de um arquivo PDF" />
       </div>
@@ -26,28 +26,28 @@ const HomePage = () => {
           onClick={() => handleClick("docx_to_pdf")}
           class="button"
           title={"Word para PDF"}
-          description={"docx para pdf"}
+          description={"Converta documentos do Word para PDF com precisão e rapidez."}
         />
         <Method
           method={"image_to_pdf"}
           onClick={() => handleClick("image_to_pdf")}
           class="button"
           title={"Imagem para PDF"}
-          description={"svg, png para pdf"}
+          description={"Transforme suas imagens em arquivos PDF de alta qualidade."}
         />
         <Method
           method={"xlsx_to_pdf"}
           onClick={() => handleClick("xlsx_to_pdf")}
           class="button"
           title={"Excel para PDF"}
-          description={"xlsx para pdf"}
+          description={"Converta suas planilhas do Excel em PDFs organizados e prontos para compartilhar."}
         />
         <Method
           method={"txt_to_pdf"}
           onClick={() => handleClick("txt_to_pdf")}
           class="button"
           title={"Texto para PDF"}
-          description={"txt para pdf"}
+          description={"Transforme arquivos de texto simples em documentos PDF profissionais."}
         />
       </div>
     </>

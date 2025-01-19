@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const StyledMethod = styled.button`
   color: transparent;
-  background: linear-gradient(to right, #ff4b5d, rgba(0, 0, 0, 0.63));
+  background: linear-gradient(to right, #ff4b5d, #ff8566); /* Gradiente atualizado */
   border-radius: 10px;
   padding: 15px;
   width: 100%;
@@ -21,29 +21,29 @@ const StyledMethod = styled.button`
     font-size: 15px;
     font-weight: 600;
     margin: 0;
-    color: #fff;
+    color: #ffffff;
   }
 
   p {
     font-size: 12px;
-    color: #fff;
+    color: #ffffff;
     margin: 5px 0 0;
   }
 
   &:hover {
-    background-color: #ab69c6;
+    background: linear-gradient(to right, #ff8566, #ab69c6); /* Cor de hover mais suave */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
 
   &:active {
-    background-color: #8e44b5;
+    background: linear-gradient(to right, #e55b50, #8e44b5); /* Tom mais forte para active */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(165, 105, 189, 0.7);
+    box-shadow: 0 0 10px rgba(255, 75, 93, 0.7); /* Cor de foco combinando com o tema */
   }
-`
+`;
 
-export default StyledMethod
+export default StyledMethod;

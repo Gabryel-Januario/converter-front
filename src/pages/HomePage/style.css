@@ -1,38 +1,55 @@
-h1 {
-  color: transparent;
-  background: linear-gradient(to top, #ff4b5d, #000000);
-  -webkit-background-clip: text;
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding-top: 40px;
-  margin-top: 20px;
-}
-
+/* Geral */
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   height: 100vh;
-  background-color: #3232323f;
+  background-color: #f9f9f9;
+  padding-top: 100px; /* Para evitar que o header fique sobreposto */
+}
+
+/* Header */
+h2 {
+  color: transparent;
+  background: linear-gradient(to top, #ff4b5d, #000000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  font-size: 25px;
+  margin: 20px 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.image-container {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+.image-container img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .button {
-  flex: 1 0 45%;
+  flex: 1 1 200px;
   max-width: 220px;
   min-width: 180px;
   background-color: #ff6f61;
@@ -45,11 +62,12 @@ body {
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
   background-color: #ff8566;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .button:active {
@@ -58,24 +76,52 @@ body {
 }
 
 .button h2 {
-  margin: 0;
+  margin: 0 0 5px;
   font-size: 18px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .button p {
-  margin: 5px 0 0;
-  font-size: 12px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.image-container {
-  text-align: center;
-  margin: 20px auto;
+@media (max-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  #buttons {
+    gap: 15px;
+  }
+
+  .button {
+    flex: 1 1 45%;
+    font-size: 14px;
+    padding: 12px;
+  }
 }
 
-.image-container img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@media (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .button {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .button h2 {
+    font-size: 16px;
+  }
+
+  .button p {
+    font-size: 12px;
+  }
 }

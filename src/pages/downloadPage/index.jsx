@@ -51,7 +51,9 @@ const DownloadPage = () => {
     <>
       <Header />
 
-      <Button title={"Faça o download do arquivo"} onClick={handleDownload} />
+      <div className="buttonDW">
+        <Button title={"Faça o download do arquivo"} onClick={handleDownload} />
+      </div>
     </>
   )
 }

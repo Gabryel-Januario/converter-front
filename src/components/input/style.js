@@ -4,33 +4,29 @@ const StyleInput = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px;
+  margin: 50px;
 
-  label {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.52);
-    margin-bottom: 10px;
-  }
+ 
 
   .file-upload-container {
     position: relative;
     display: inline-block;
-    width: 500px;
-    height: 40px;
-
+    width: 100%;
+    max-width: 500px; /* Tamanho máximo para manter a responsividade */
+    height: 45px;
     background: linear-gradient(
       to top,
-      rgba(255, 75, 93, 0.35),
-      rgba(0, 0, 0, 0.21)
-    );
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+rgba(255, 75, 93, 0.39),
+rgba(211, 47, 47, 0.6)
+    ); /* Gradiente vermelho */
+    border: 2px solid #d32f2f; /* Borda vermelha */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     overflow: hidden;
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: rgba(255, 75, 93, 0.66);
+      border-color: #c2185b; /* Cor mais intensa de vermelho no hover */
     }
 
     .file-input {
@@ -44,25 +40,27 @@ const StyleInput = styled.form`
       width: 100%;
       height: 100%;
       cursor: pointer;
-      font-size: 14px;
-      color: rgba(211, 211, 211, 1);
-      transition: all 0.2s ease;
+      font-size: 15px;
+      color: #fff; /* Cor do texto branca para contraste */
+      font-weight: 600;
+      transition: all 0.3s ease;
 
       i {
         margin-right: 10px;
       }
 
       &:hover {
-        color: rgba(0, 0, 0, 0.64);
+        color: #fff;
         background: linear-gradient(
           to top,
-          rgba(255, 75, 93, 0.35),
-          rgba(0, 0, 0, 0.21)
-        );
+          #ff4b5d,
+          #d32f2f
+        ); /* Mantém o gradiente no hover */
       }
 
       &:active {
-        color: rgba(255, 75, 93, 0.16);
+        color: rgba(255, 255, 255, 0.8);
+        background: #c2185b; /* Cor mais forte de vermelho no click */
       }
     }
   }
