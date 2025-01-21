@@ -34,7 +34,6 @@ const UploadPage = () => {
       })
       if (response.ok) {
         const result = await response.json()
-        alert(`Upload bem-sucedido: ${result.message}`)
         return {
           ok: true,
           message: result.message,
