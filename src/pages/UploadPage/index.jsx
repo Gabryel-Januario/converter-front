@@ -117,6 +117,9 @@ const UploadPage = () => {
     const file = fileInputRef.current?.files[0]
     if (file) {
       setFilename(file.name)
+      setLabel(file.name)
+    } else {
+      setLabel("Nenhum arquivo encontrado.")
     }
   }
 
@@ -129,8 +132,6 @@ const UploadPage = () => {
       setLabel("Selecione o arquivo Excel")
     } else if (method == "txt_to_pdf") {
       setLabel("Selecione o arquivo de texto")
-    } else if (filename) {
-      setLabel(filename)
     } else {
       setLabel("Método não encontrado")
     }
@@ -141,7 +142,11 @@ const UploadPage = () => {
       <Header />
       <h2>Faça o upload do seu arquivo!</h2>
       <div id="input">
-        <Input ref={fileInputRef} inputName={label} />
+        <Input
+          ref={fileInputRef}
+          inputName={label}
+          onChange={handleFileChange}
+        />
       </div>
       <div className="centered">
         <Button title={"Converter"} onClick={handleSubmit} />

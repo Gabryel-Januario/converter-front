@@ -25,29 +25,37 @@ const HomePage = () => {
           method={"docx_to_pdf"}
           onClick={() => handleClick("docx_to_pdf")}
           class="button"
-          title={"Word para PDF"}
-          description={"Converta documentos do Word para PDF com precisão e rapidez."}
+          title={"Word"}
+          description={
+            "Converta documentos do Word para PDF com precisão e rapidez."
+          }
         />
         <Method
           method={"image_to_pdf"}
           onClick={() => handleClick("image_to_pdf")}
           class="button"
-          title={"Imagem para PDF"}
-          description={"Transforme suas imagens em arquivos PDF de alta qualidade."}
+          title={"Imagem"}
+          description={
+            "Transforme suas imagens em arquivos PDF de alta qualidade."
+          }
         />
         <Method
           method={"xlsx_to_pdf"}
           onClick={() => handleClick("xlsx_to_pdf")}
           class="button"
-          title={"Excel para PDF"}
-          description={"Converta suas planilhas do Excel em PDFs organizados e prontos para compartilhar."}
+          title={"Excel"}
+          description={
+            "Converta suas planilhas do Excel em PDFs organizados e prontos para compartilhar."
+          }
         />
         <Method
           method={"txt_to_pdf"}
           onClick={() => handleClick("txt_to_pdf")}
           class="button"
-          title={"Texto para PDF"}
-          description={"Transforme arquivos de texto simples em documentos PDF profissionais."}
+          title={"Texto"}
+          description={
+            "Transforme arquivos de texto simples em documentos PDF profissionais."
+          }
         />
       </div>
     </>
